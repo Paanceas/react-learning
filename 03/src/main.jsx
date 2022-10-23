@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom/client';
+import { CounterApp } from './CounterApp';
 
-function App() {
-    return (<h1>Hola Mundo</h1>);
-}
+import './styles.css';
 
 ReactDom.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <App/>
+        <CounterApp value={10} />
     </React.StrictMode>
 );
