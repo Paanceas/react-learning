@@ -1,14 +1,14 @@
 import { getGifs } from "../../src/helpers/getGifs";
 
-describe('Pruebas en getGifs', () => { 
-    test('Debe de retornar un arreglo de gift', async() => { 
-        const gifs = await getGifs('One Punch');
-        expect(gifs.length).toBeGreaterThan(0);
+describe("Pruebas en getGifs", () => {
+  test("Debe de retornar un arreglo de gift", async () => {
+    const gifs = await getGifs("One Punch");
+    expect(gifs.length).toBeGreaterThan(0);
 
-        expect(gifs[0]).toEqual({
-            id: expect.any(String),
-            title: expect.any(String),
-            url: expect.any(String)
-        });
+    expect(gifs[0]).toEqual({
+      id: expect.any(String),
+      title: expect.any(String),
+      url: expect.any(String),
     });
+  });
 });

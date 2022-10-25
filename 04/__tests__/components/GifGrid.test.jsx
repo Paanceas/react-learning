@@ -47,6 +47,8 @@ describe("Pruebas en GifGrid", () => {
   test("Debe de mostrar items cuando se cargan las imagenes useFetchGifs", () => {
     useFetchGifs.mockReturnValue(endUseFetchGifs);
     render(<GifGrid {...props} />);
-    expect(screen.getAllByRole('img').length).toBe(endUseFetchGifs.images.length);
+    expect(screen.getAllByRole("img").length).toBe(
+      endUseFetchGifs.images.length
+    );
   });
 });
