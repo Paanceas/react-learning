@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { todoReducer } from "../08-useReducer/todoReducer";
 
 const init = () => {
@@ -8,6 +8,9 @@ const init = () => {
 export const useTodo = () => {
 
     const [ todos, dispatch ] = useReducer(todoReducer, [], init);
+
+    const [pendingTodosCount, setPendingTodosCount] = useState(todos.length);
+    const [allTodos, setAllTodos] = useState(todos.length);
 
     const handleNewTodo = (todo) => {
       const action = {
@@ -34,10 +37,14 @@ export const useTodo = () => {
 
     useEffect(() => {
       localStorage.setItem('todos', JSON.stringify(todos));
+      setPendingTodosCount(todos.filter(todo=> !todo.done).length);
+      setAllTodos(todos.length);
     }, [todos])
 
   return {
     todos,
+    pendingTodosCount,
+    allTodos,
     handleNewTodo,
     handleDeleteTodo,
     handleToggleTodo
