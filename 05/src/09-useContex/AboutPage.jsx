@@ -1,7 +1,7 @@
 export const AboutPage = () => {
   return (
     <>
-      <h1>About App</h1>
+      <h1>AboutPage</h1>
       <hr />
     </>
   );
